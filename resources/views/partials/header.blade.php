@@ -3,12 +3,12 @@
         <div class="topbar d-flex container">
             <div class="menu d-flex">
                 <ul>
-                    <li v-for="(item, index) in topbarMenu" :key="index"><a :href="item.href">{{ item.text }}</a></li>
+                    <li v-for="(item, index) in topbarMenu"><a href="item.href"></a></li>
                 </ul>
             </div>
             <div class="logo d-flex"></div>
             <div class="menu-account d-flex">
-                <p v-for="(icon, index) in icons" :key="index"><i :class="[icon.icon]"></i></p>
+                <p v-for="(icon, index) in icons"><i class="[icon.icon]"></i></p>
             </div>
         </div>
     </div>

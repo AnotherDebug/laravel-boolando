@@ -13,12 +13,12 @@
         <div class="heart">
             <p>&hearts;</p>
         </div>
-        <p v-if="products.discount !== null" class="discount">{{ products.discount }}</p>
-        <p v-if="products.sostenibilita === true" class="sustain" :class=" products.discount === null && products.sostenibilita === true ? 'sus-only' : '' ">Sostenibilità</p>
-        <p class="trademark">{{ products.marca }}</p>
-        <p class="description text-strong">{{ description }}</p>
-        <span class="price-discount text-red">{{ priceDiscount }}</span>
-        <span v-if="this.products.fullPrice !== null" class="price">{{ priceFull }}</span>
+        <p v-if="products.discount !== null" class="discount"></p>
+        <p v-if="products.sostenibilita === true" class="sustain" class=" products.discount === null && products.sostenibilita === true ? 'sus-only' : '' ">Sostenibilità</p>
+        <p class="trademark"></p>
+        <p class="description text-strong"></p>
+        <span class="price-discount text-red"></span>
+        <span v-if="this.products.fullPrice !== null" class="price"></span>
     </section>
 
 </div>
