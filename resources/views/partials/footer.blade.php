@@ -1,3 +1,9 @@
+@php
+    $footerMenu = config('menues.footerMenu');
+    $footerIcons = config('menues.footerIcons');
+@endphp
+
+
 <footer>
 
     <!-- Info footer -->
@@ -6,13 +12,19 @@
             <div class="property">
                 <p class="text-strong">Boolando s.r.l.</p>
                 <ul>
-                    <li v-for="(item, index) in footerMenu"><a href="item.href"></a></li>
+                    @foreach ($footerMenu as $item)
+                        <li><a href="#">{{ $item['text'] }}</a></li>
+                    @endforeach
+
                 </ul>
             </div>
             <div class="social">
                 <p>Trovaci anche su</p>
                 <ul>
-                    <li v-for="(icon, index) in icons"><i class="[icon.icon]"></i></li>
+                    @foreach ($footerIcons as $icons)
+                        <li><i class="{{$icons['icon']}}"></i></li>
+                    @endforeach
+
                 </ul>
             </div>
         </div>
