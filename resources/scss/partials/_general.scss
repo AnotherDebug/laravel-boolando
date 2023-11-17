@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $primary-font;
+}
+
+.container {
+    width: $container-width;
+    margin: 0 auto;
+    max-width: $container-max-width;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.text-red {
+    color: $red-color;
+    font-weight: $font-weight600;
+}
+
+.text-strong {
+    font-weight: $font-weight600;
+}
