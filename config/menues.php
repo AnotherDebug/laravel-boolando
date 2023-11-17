@@ -3,6 +3,10 @@
 return [
     "topbarMenu" => [
         [
+            "name" => "home",
+            "text" => "Home"
+        ],
+        [
             "name" => "woman",
             "text" => "Donna"
         ],
