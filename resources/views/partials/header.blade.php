@@ -1,5 +1,6 @@
 @php
     $topbarMenu = config('menues.topbarMenu');
+    $topbarIcons = config('menues.topbarIcons');
 @endphp
 
 
@@ -15,7 +16,10 @@
             </div>
             <div class="logo d-flex"></div>
             <div class="menu-account d-flex">
-                <p v-for="(icon, index) in icons"><i class="[icon.icon]"></i></p>
+                @foreach ($topbarIcons as $icon)
+                <p><i class="{{$icon['icon']}}"></i></p>
+                @endforeach
+
             </div>
         </div>
     </div>
