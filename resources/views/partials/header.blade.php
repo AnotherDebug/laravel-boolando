@@ -1,9 +1,16 @@
+@php
+    $topbarMenu = config('menues.topbarMenu');
+@endphp
+
+
 <header>
     <div class="top-fixed">
         <div class="topbar d-flex container">
             <div class="menu d-flex">
                 <ul>
-                    <li v-for="(item, index) in topbarMenu"><a href="item.href"></a></li>
+                    @foreach ($topbarMenu as $item)
+                    <li><a href="{{route($item['name'])}}">{{$item['text']}}</a></li>
+                    @endforeach
                 </ul>
             </div>
             <div class="logo d-flex"></div>
