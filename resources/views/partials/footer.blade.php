@@ -15,19 +15,18 @@
                     @foreach ($footerMenu as $item)
                         <li><a href="#">{{ $item['text'] }}</a></li>
                     @endforeach
-
                 </ul>
             </div>
             <div class="social">
                 <p>Trovaci anche su</p>
                 <ul>
                     @foreach ($footerIcons as $icons)
-                        <li><i class="{{$icons['icon']}}"></i></li>
+                        <li><a href="#"><i class="{{ $icons['icon'] }}"></i></a></li>
                     @endforeach
-
                 </ul>
             </div>
         </div>
+    </div>
     </div>
     <!-- /Info footer -->
 
