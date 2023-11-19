@@ -28,3 +28,15 @@ Route::get('/moda-uomo', function () {
 Route::get('/moda-bambino', function () {
     return view('children');
 })->name('children');
+
+Route::get('/area-personale', function () {
+    return view('user');
+})->name('user');
+
+Route::get('/preferiti', function () {
+    return view('favorites');
+})->name('favorites');
+
+Route::get('/carrello-acquisti', function () {
+    return view('bag');
+})->name('bag');
