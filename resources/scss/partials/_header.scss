@@ -51,12 +51,18 @@ header {
             justify-content: flex-end;
             width: 20%;
 
-            p {
-                padding-left: 10px;
+            ul {
+                list-style: none;
 
-                i {
-                    cursor: pointer;
-                    color: $white-color;
+                li {
+                    display: inline-block;
+
+                    a {
+                        text-decoration: none;
+                        align-items: center;
+                        padding-right: 5px;
+                        color: $white-color;
+                    }
                 }
             }
         }
