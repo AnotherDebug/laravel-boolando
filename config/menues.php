@@ -52,22 +52,27 @@ return [
     ],
     "footerIcons" => [
         [
+            "name" => "https://twitter.com/",
             "icon" => "fa-brands fa-square-twitter",
             "text" => "twitter"
         ],
         [
+            "name" => "https://www.facebook.com/",
             "icon" => "fa-brands fa-square-facebook",
             "text" => "facebook"
         ],
         [
+            "name" => "https://www.instagram.com/",
             "icon" => "fa-brands fa-square-instagram",
             "text" => "instagram"
         ],
         [
+            "name" => "https://www.pinterest.it/",
             "icon" => "fa-brands fa-square-pinterest",
             "text" => "pinterest"
         ],
         [
+            "name" => "https://www.youtube.com/",
             "icon" => "fa-brands fa-youtube",
             "text" => "youtube"
         ]
