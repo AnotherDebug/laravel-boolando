@@ -1,7 +1,22 @@
 @php
     $products = config('products');
-@endphp
 
+    function discountedPrice($product)
+    {
+        $discount = 0;
+
+        foreach ($product['badges'] as $badge) {
+            if ($badge['type'] === 'discount') {
+                $discount =  floatval(str_replace('%', '', $badge['value']));
+                $discount = ltrim($discount, '-');
+            }
+        }
+        $discountedPrice = $product['price'] - ($product['price'] * $discount) / 100;
+
+        return number_format($discountedPrice, 2);
+    }
+
+@endphp
 
 @extends('layouts.main')
 
@@ -16,7 +31,7 @@
                     <img class="second" src="../img/{{ $product['backImage'] }}" alt="{{ $product['brand'] }}">
                 </div>
                 <div class="heart">
-                    <p>&hearts;</p>
+                    <a style="{{$product['isInFavorites'] ? 'color:red' : ''}}" href="#">&hearts;</a>
                 </div>
 
                 {{-- Discount --}}
@@ -32,17 +47,26 @@
                             : '') }}
                 </p>
 
-
+                {{-- Sostenibilita --}}
                 <p
-                    class="{{ isset($product['badges'][0]['type']) && $product['badges'][0]['type'] == 'tag' ? 'sustain' : '' }} {{ isset($product['badges'][0]['type']) && !isset($product['badges'][1]['type']) ? 'sus-only' : '' }}">
-                    {{ isset($product['badges'][0]['type']) && $product['badges'][0]['type'] == 'tag' ? $product['badges'][0]['value'] : '' }}
+                    class="{{ isset($product['badges'][0]['type']) && $product['badges'][0]['type'] == 'tag' ? 'sustain' : '' }}
+                    {{ isset($product['badges'][0]['type']) && !isset($product['badges'][1]['type']) ? 'sus-only' : '' }}">
+                    {{ isset($product['badges'][0]['type']) && $product['badges'][0]['type'] == 'tag'
+                        ? $product['badges'][0]['value']
+                        : '' }}
                 </p>
 
-
+                {{-- Marca --}}
                 <p class="trademark">{{ $product['brand'] }}</p>
+
+                {{-- Nome --}}
                 <p class="description text-strong">{{ $product['name'] }}</p>
-                <span class="price-discount text-red"></span>
-                <span v-if="this.products.fullPrice !== null" class="price">{{ $product['price'] }}</span>
+
+                {{-- Prezzo Scontato --}}
+                <span class="price-discount text-red {{ isset($product['badges'][0]['type']) && $product['badges'][0]['type'] == 'tag' && !isset($product['badges'][1]['type']) ? 'd-none' : '' }}">{{ discountedPrice($product) }} &euro;</span>
+
+                {{-- Prezzo Pieno --}}
+                <span class="price {{ isset($product['badges'][0]['type']) && $product['badges'][0]['type'] == 'tag' && !isset($product['badges'][1]['type']) ? 'fullPrice' : '' }}">{{ $product['price'] }} &euro;</span>
             </section>
         @endforeach
 
