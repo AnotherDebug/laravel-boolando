@@ -1,5 +1,7 @@
 main {
     padding-bottom: 50px;
+    height: calc(100vh - 140px);
+    overflow: auto;
     .card {
         width: 33%;
         min-width: 200px;
