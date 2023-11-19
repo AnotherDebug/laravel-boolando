@@ -21,14 +21,17 @@ return [
     ],
     "topbarIcons" => [
         [
+            "name" => "user",
             "icon" => "fa-regular fa-user",
             "text" => "user"
         ],
         [
+            "name" => "favorites",
             "icon" => "fa-regular fa-heart",
             "text" => "heart"
         ],
         [
+            "name" => "bag",
             "icon" => "fa-solid fa-bag-shopping",
             "text" => "bag shopping"
         ]
