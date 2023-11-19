@@ -10,16 +10,17 @@
             <div class="menu d-flex">
                 <ul>
                     @foreach ($topbarMenu as $item)
-                    <li><a href="{{route($item['name'])}}">{{$item['text']}}</a></li>
+                        <li><a href="{{ route($item['name']) }}">{{ $item['text'] }}</a></li>
                     @endforeach
                 </ul>
             </div>
             <div class="logo d-flex"></div>
             <div class="menu-account d-flex">
-                @foreach ($topbarIcons as $icon)
-                <p><i class="{{$icon['icon']}}"></i></p>
-                @endforeach
-
+                <ul>
+                    @foreach ($topbarIcons as $icon)
+                        <li><a href="{{ route($icon['name']) }}"><i class="{{ $icon['icon'] }}"></i></a></li>
+                    @endforeach
+                </ul>
             </div>
         </div>
     </div>
