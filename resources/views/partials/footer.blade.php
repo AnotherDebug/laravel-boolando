@@ -21,7 +21,7 @@
                 <p>Trovaci anche su</p>
                 <ul>
                     @foreach ($footerIcons as $icons)
-                        <li><a href="#"><i class="{{ $icons['icon'] }}"></i></a></li>
+                        <li><a target="_blank" href="{{ $icons['name'] }}"><i class="{{ $icons['icon'] }}"></i></a></li>
                     @endforeach
                 </ul>
             </div>
